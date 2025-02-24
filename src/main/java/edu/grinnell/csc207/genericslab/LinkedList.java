@@ -104,4 +104,17 @@ public class LinkedList<T> {
             }
         }
     }
+    
+    /**
+     * Intersperses a node with sep between every element.
+     * @param sep the value to be interspersed.
+     */
+    void intersperse (T sep){
+        Node<T> cur = first; 
+        while (cur.next != null){
+            Node<T> ins = new Node<T>(sep, cur.next);
+            cur.next = ins;
+            cur = ins.next;
+        }
+    }
 }
