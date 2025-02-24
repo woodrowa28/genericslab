@@ -1,14 +1,14 @@
-package edu.grinnell.csc207.listlab;
+package edu.grinnell.csc207.genericslab;
 
 /**
  * A linked implementation of the list ADT.
  */
-public class LinkedListInt {
+public class LinkedListString {
     private static class Node {
-        public int value;
+        public String value;
         public Node next;
 
-        public Node(int value, Node next) {
+        public Node(String value, Node next) {
             this.value = value;
             this.next = next;
         }
@@ -19,7 +19,7 @@ public class LinkedListInt {
     /**
      * Constructs a new, empty linked list.
      */
-    public LinkedListInt() {
+    public LinkedListString() {
         this.first = null;
     }
 
@@ -28,7 +28,7 @@ public class LinkedListInt {
      * 
      * @param value the value to add to the end of the list
      */
-    public void add(int value) {
+    public void add(String value) {
         if (first == null) {
             first = new Node(value, null);
         } else {
@@ -57,7 +57,7 @@ public class LinkedListInt {
      * @param index the index of the element to retrieve
      * @return the value at the specified <code>index</code>
      */
-    public int get(int index) {
+    public String get(int index) {
         if (index < 0) {
             throw new IndexOutOfBoundsException(index);
         }
@@ -80,11 +80,11 @@ public class LinkedListInt {
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
      */
-    public int remove(int index) {
+    public String remove(int index) {
         if (index < 0 || (index == 0 && first == null)) {
             throw new IndexOutOfBoundsException(index);
         } else if (index == 0) {
-            int ret = first.value;
+            String ret = first.value;
             first = first.next;
             return ret;
         } else {
@@ -97,7 +97,7 @@ public class LinkedListInt {
             if (cur.next == null) {
                 throw new IndexOutOfBoundsException(origIndex);
             } else {
-                int ret = cur.next.value;
+                String ret = cur.next.value;
                 cur.next = cur.next.next;
                 return ret;
             }

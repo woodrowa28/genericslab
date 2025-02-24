@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.listlab;
+package edu.grinnell.csc207.genericslab;
 
 /**
  * An Optional<@T> is either empty or holds a single value of type @T.

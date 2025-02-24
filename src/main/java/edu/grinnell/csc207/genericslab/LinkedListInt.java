@@ -1,14 +1,14 @@
-package edu.grinnell.csc207.listlab;
+package edu.grinnell.csc207.genericslab;
 
 /**
  * A linked implementation of the list ADT.
  */
-public class LinkedListString {
+public class LinkedListInt {
     private static class Node {
-        public String value;
+        public int value;
         public Node next;
 
-        public Node(String value, Node next) {
+        public Node(int value, Node next) {
             this.value = value;
             this.next = next;
         }
@@ -19,7 +19,7 @@ public class LinkedListString {
     /**
      * Constructs a new, empty linked list.
      */
-    public LinkedListString() {
+    public LinkedListInt() {
         this.first = null;
     }
 
@@ -28,7 +28,7 @@ public class LinkedListString {
      * 
      * @param value the value to add to the end of the list
      */
-    public void add(String value) {
+    public void add(int value) {
         if (first == null) {
             first = new Node(value, null);
         } else {
@@ -57,7 +57,7 @@ public class LinkedListString {
      * @param index the index of the element to retrieve
      * @return the value at the specified <code>index</code>
      */
-    public String get(int index) {
+    public int get(int index) {
         if (index < 0) {
             throw new IndexOutOfBoundsException(index);
         }
@@ -80,11 +80,11 @@ public class LinkedListString {
      * @param index the index of the element to remove
      * @return the element at <code>index</code>
      */
-    public String remove(int index) {
+    public int remove(int index) {
         if (index < 0 || (index == 0 && first == null)) {
             throw new IndexOutOfBoundsException(index);
         } else if (index == 0) {
-            String ret = first.value;
+            int ret = first.value;
             first = first.next;
             return ret;
         } else {
@@ -97,7 +97,7 @@ public class LinkedListString {
             if (cur.next == null) {
                 throw new IndexOutOfBoundsException(origIndex);
             } else {
-                String ret = cur.next.value;
+                int ret = cur.next.value;
                 cur.next = cur.next.next;
                 return ret;
             }
