@@ -109,12 +109,50 @@ public class LinkedList<T> {
      * Intersperses a node with sep between every element.
      * @param sep the value to be interspersed.
      */
-    void intersperse (T sep){
+    public void intersperse (T sep){
         Node<T> cur = first; 
         while (cur.next != null){
-            Node<T> ins = new Node<T>(sep, cur.next);
+            Node<T> ins = new Node<>(sep, cur.next);
             cur.next = ins;
             cur = ins.next;
         }
+    }
+    
+    /**
+     * Returns the maximum element of the list. This method CANNOT
+     * be implemented because not every Object can be quantized to have a max
+     * @return maximum value
+     */
+    public T maximum() {
+        throw new UnsupportedOperationException();
+    }
+    
+    
+    /**
+     * Gives a string representation of the list
+     * @return String form of list
+     */
+    @Override
+    public String toString() {
+        if (first == null) {
+            return "[]";
+        }
+        String ret = "[";
+        Node<T> curr = first;
+        while(curr.next != null) {
+            ret += curr.value.toString() + ", ";
+            curr = curr.next;
+        }
+        ret += curr.value.toString() + "]";
+        return ret;
+    }
+    
+    /**
+     * Sorts the list using insertion sorting algorithm. This method CANNOT be
+     * implemented because we cannot guarantee that the objects have any kind
+     * of "arrangement" that allows them to be sortable.
+     */
+    public void insertionSort() {
+        throw new UnsupportedOperationException();
     }
 }
